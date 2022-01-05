@@ -1,7 +1,7 @@
 {
-  "name": "@nrsk/serpent",
+  "name": "@nrsk/shikigami",
   "version": "1.0.0",
-  "description": "Yet another TypeScript library starter with conventional goodies and automatic semantic releases.",
+  "description": "Syntax highlighting with shiki for markdown-it.",
   "main": "./dist/index.js",
   "files": [
     "dist"
@@ -24,19 +24,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/norskeld/serpent.git"
+    "url": "git+https://github.com/norskeld/shikigami.git"
   },
   "keywords": [
-    "starter",
-    "library",
     "typescript",
-    "jest",
-    "eslint",
-    "prettier",
-    "husky",
-    "lint-staged",
-    "commitlint",
-    "semantic-release"
+    "markdown-it",
+    "plugin",
+    "shiki"
   ],
   "author": {
     "name": "Vladislav Mamon",
@@ -44,9 +38,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/norskeld/serpent/issues"
+    "url": "https://github.com/norskeld/shikigami/issues"
   },
-  "homepage": "https://github.com/norskeld/serpent#readme",
+  "homepage": "https://github.com/norskeld/shikigami#readme",
   "devDependencies": {
     "@commitlint/cli": "^16.0.1",
     "@nrsk/config-conventional": "^1.0.0",
