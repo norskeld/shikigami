@@ -1,0 +1,83 @@
+{
+  "name": "@nrsk/serpent",
+  "version": "1.0.0",
+  "description": "Yet another TypeScript library starter with conventional goodies and automatic semantic releases.",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=14.17.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "fmt:prettier": "prettier --write \"**/*.{js,ts,json}\"",
+    "fmt:lint": "eslint --fix --ext .js,.ts .",
+    "prebuild": "rimraf dist",
+    "prepare": "husky install",
+    "release": "npx semantic-release",
+    "release:dry": "npx semantic-release --dry-run",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norskeld/serpent.git"
+  },
+  "keywords": [
+    "starter",
+    "library",
+    "typescript",
+    "jest",
+    "eslint",
+    "prettier",
+    "husky",
+    "lint-staged",
+    "commitlint",
+    "semantic-release"
+  ],
+  "author": {
+    "name": "Vladislav Mamon",
+    "email": "hello@vm.codes"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/norskeld/serpent/issues"
+  },
+  "homepage": "https://github.com/norskeld/serpent#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@nrsk/config-conventional": "^1.0.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.5",
+    "lint-staged": "^12.1.4",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^18.0.1",
+    "ts-jest": "^27.1.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "commitlint": {
+    "extends": [
+      "@nrsk/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,json}": [
+      "prettier --write"
+    ],
+    "*.{js,ts}": [
+      "eslint --fix"
+    ]
+  }
+}
