@@ -1,36 +1,55 @@
 {
   "name": "@nrsk/shikigami",
   "version": "1.0.0",
-  "description": "Syntax highlighting with shiki for markdown-it.",
-  "main": "./dist/index.js",
+  "description": "Opinionated syntax highlighting with shiki for markdown-it.",
+  "sideEffects": false,
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs",
+      "types": "./index.d.ts"
+    }
+  },
   "files": [
-    "dist"
+    "CHANGELOG.md",
+    "*.d.ts",
+    "*.cjs*",
+    "*.mjs*"
   ],
   "engines": {
     "node": ">=14.17.0"
   },
   "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc -w",
+    "build": "npm run build:types && npm run build:rollup",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build:rollup": "node --require tsm scripts/compile.ts",
     "fmt:prettier": "prettier --write \"**/*.{js,ts,json}\"",
     "fmt:lint": "eslint --fix --ext .js,.ts .",
+    "postbuild": "rimraf dist/types",
+    "postversion": "node --require tsm ../scripts/release.ts restore",
     "prebuild": "rimraf dist",
-    "prepare": "husky install",
+    "prepare": "echo husky install",
+    "prerelease": "node --require tsm scripts/release.ts prepare",
     "release": "npx semantic-release",
     "release:dry": "npx semantic-release --dry-run",
     "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:coverage": "jest --coverage --run-in-band",
+    "test:watch": "jest --watch --max-workers=50%"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/norskeld/shikigami.git"
   },
   "keywords": [
-    "typescript",
+    "markdown-it-plugin",
     "markdown-it",
-    "plugin",
-    "shiki"
+    "markdown",
+    "shiki",
+    "syntax-highlighting",
+    "typescript"
   ],
   "author": {
     "name": "Vladislav Mamon",
@@ -41,12 +60,20 @@
     "url": "https://github.com/norskeld/shikigami/issues"
   },
   "homepage": "https://github.com/norskeld/shikigami#readme",
+  "peerDependencies": {
+    "markdown-it": "^12.3.0"
+  },
+  "dependencies": {
+    "shiki": "^0.10.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^16.0.1",
     "@nrsk/config-conventional": "^1.0.0",
+    "@rollup/plugin-typescript": "^8.3.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@types/jest": "^27.4.0",
+    "@types/markdown-it": "^12.2.3",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "eslint": "^8.6.0",
@@ -56,9 +83,11 @@
     "lint-staged": "^12.1.4",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
+    "rollup": "^2.62.0",
+    "rollup-plugin-dts": "^4.1.0",
     "semantic-release": "^18.0.1",
     "ts-jest": "^27.1.2",
-    "ts-node": "^10.4.0",
+    "tsm": "^2.2.1",
     "typescript": "^4.5.4"
   },
   "commitlint": {

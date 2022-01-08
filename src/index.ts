@@ -1,3 +1,2 @@
-export async function identity<T>(value: T): Promise<T> {
-  return value
-}
+export type { ShikigamiOptions } from './shikigami.options'
+export { shikigami, loadTheme } from './shikigami'
