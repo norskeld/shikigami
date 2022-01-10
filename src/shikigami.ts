@@ -139,13 +139,9 @@ function extractMeta(source: string, { openToken, closeToken }: ExtractMetaOptio
 }
 
 function sanitizeMetaPojo(metaPojo: MetaPojo): MetaPojo {
-  const ALLOWED_KEYS = [
-    'withLanguage',
-    'withLineNumbers',
-    'highlight',
-    'highlightClasses',
-    'highlightRangeClasses'
-  ].map((key) => key.toLowerCase())
+  const ALLOWED_KEYS = ['withLanguage', 'withLineNumbers', 'highlight', 'highlightInvert'].map(
+    (key) => key.toLowerCase()
+  )
 
   return Object.entries(metaPojo)
     .filter(([key]) => ALLOWED_KEYS.includes(key.toLowerCase()))
