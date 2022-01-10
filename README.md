@@ -1,6 +1,8 @@
 # `式神` shikigami
 
 [![Build/Test](https://img.shields.io/github/workflow/status/norskeld/shikigami/test?style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/shikigami/actions)
+[![Coverage](https://img.shields.io/coveralls/github/norskeld/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://coveralls.io/github/norskeld/shikigami)
+[![NPM](https://img.shields.io/npm/v/@nrsk/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://npm.im/@nrsk/shikigami)
 [![Semantic Release](https://img.shields.io/static/v1?label=semantic&message=release&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/semantic-release/semantic-release)
 
 Opinionated syntax highlighting with [shiki] for [markdown-it].
