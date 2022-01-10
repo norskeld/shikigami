@@ -18,7 +18,11 @@ jobs:
           cache: 'npm'
       - name: Install Deps
         run: npm ci
-      - name: Build & Test
+      - name: Build, Test & Coverage
         run: |
           npm run build
-          npm run test
+          npm run test:coverage -- --verbose
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
