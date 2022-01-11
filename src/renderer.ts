@@ -23,7 +23,7 @@ export function renderToHtml(
   // Open: building.
   append(`<pre class="shiki" style="background-color: ${options.background}">`)
 
-  // Optionally add a div with `language-{languageId}` class and the `languageId` label itself.
+  // Optionally add a div with `language-{languageId}` class and the `languageId` label.
   if (options.withLanguage && options.languageId.length) {
     append(`<div class="language-id">${options.languageId}</div>`)
   }
@@ -33,22 +33,29 @@ export function renderToHtml(
 
   // Optionally add a div with line numbers.
   if (options.withLineNumbers) {
-    append(
-      `<div class="line-numbers">
-        ${lines.map((_, lineIndex) => `<div class="line-number">${lineIndex + 1}</div>`).join('')}
-      </div>`
-    )
+    // Open: line numbers.
+    append(`<div class="line-numbers">`)
+
+    // Append line classes for line number elements as well.
+    lines.forEach((_, lineIndex) => {
+      const lineNumber = lineIndex + 1
+      const lineOptions = groupedLineOptions.get(lineNumber) ?? []
+      const lineClasses = getLineClasses(lineOptions, ['line-number']).join(' ')
+
+      append(`<div class="${lineClasses}">${lineIndex + 1}</div>`)
+    })
+
+    // Close: line numbers.
+    append(`</div>`)
   }
 
   // Open: building the lines with code.
   append(`<div class="lines">`)
 
-  // console.log(lines)
-
   lines.forEach((line, lineIndex) => {
     const lineNumber = lineIndex + 1
     const lineOptions = groupedLineOptions.get(lineNumber) ?? []
-    const lineClasses = getLineClasses(lineOptions).join(' ')
+    const lineClasses = getLineClasses(lineOptions, ['line']).join(' ')
 
     // Open: line.
     append(`<div class="${lineClasses}">`)
@@ -118,6 +125,8 @@ function transformPlainText(tokens: Array<Array<IThemedToken>>): Array<Array<ITh
   const [line] = tokens
   const [token] = line
 
+  // NOTE: This is not looking good tbqh. Can token content contain other chars or unicode sequences
+  // which are treated as line break?
   const strings = token.content.split('\n')
 
   const lines = strings
@@ -127,8 +136,11 @@ function transformPlainText(tokens: Array<Array<IThemedToken>>): Array<Array<ITh
   return lines
 }
 
-function getLineClasses(lineOptions: Array<LineOption>): Array<string> {
-  const lineClasses = new Set(['line'])
+function getLineClasses(
+  lineOptions: Array<LineOption>,
+  defaults: Array<string> = []
+): Array<string> {
+  const lineClasses = new Set(defaults)
 
   for (const lineOption of lineOptions) {
     for (const lineClass of lineOption.classes ?? []) {
