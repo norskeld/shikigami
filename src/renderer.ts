@@ -58,7 +58,7 @@ export function renderToHtml(
     const lineClasses = getLineClasses(lineOptions, ['line']).join(' ')
 
     // Open: line.
-    append(`<div class="${lineClasses}">`)
+    append(`<span class="${lineClasses}">`)
 
     if (line.length) {
       line.forEach((token) => {
@@ -72,17 +72,17 @@ export function renderToHtml(
         ]
 
         append(
-          `<div class="line-token" style="${cssDeclarations.join('; ')}">${escapeHtml(
+          `<span class="line-token" style="${cssDeclarations.join('; ')}">${escapeHtml(
             content
-          )}</div>`
+          )}</span>`
         )
       })
     } else {
-      append(`<div class="line-token">&nbsp;</div>`)
+      append(`<span class="line-token">&nbsp;</span>`)
     }
 
     // Close: line.
-    append(`</div>`)
+    append(`</span>`)
   })
 
   // Close: building the lines with code.
