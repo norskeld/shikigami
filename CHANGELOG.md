@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/norskeld/shikigami/compare/v1.1.0...v1.1.1) (2022-01-15)
+
+
+### Bug Fixes
+
+* use `span`s for lines and tokens ([1fa32ed](https://github.com/norskeld/shikigami/commit/1fa32ed59202d02f1a29b064d58c19b3463623f9))
+
 # [1.1.0](https://github.com/norskeld/shikigami/compare/v1.0.0...v1.1.0) (2022-01-11)
 
 
