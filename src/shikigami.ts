@@ -1,10 +1,10 @@
 import { getHighlighter, loadTheme, type IThemedToken } from 'shiki'
 import { PluginSimple } from 'markdown-it'
 
-import { type ShikigamiOptions, type HighlightRangeClasses } from './shikigami.options'
+import type { ShikigamiOptions, HighlightRangeClasses } from './shikigami.options'
 import { getDefaultOptions, mergeOptions } from './shikigami.options'
 
-import { type LineOption } from './renderer.options'
+import type { LineOption } from './renderer.options'
 import { renderToHtml } from './renderer'
 
 interface CreateLineOptions {
@@ -46,7 +46,7 @@ async function shikigami(userOptions: ShikigamiOptions = {}): Promise<PluginSimp
           closeToken: options.closeToken
         })
 
-        const withLanguage = options.withLanguage
+        const withLanguage = meta.withLanguage ?? options.withLanguage
         const withLineNumbers = meta.withLineNumbers ?? options.withLineNumbers
 
         const themedTokensRaw = highlighter.codeToThemedTokens(markdownContent, languageId)
@@ -58,7 +58,8 @@ async function shikigami(userOptions: ShikigamiOptions = {}): Promise<PluginSimp
           {
             classes: options.highlightClasses,
             rangeClasses: options.highlightRangeClasses,
-            invertClasses: options.highlightInvert ? options.highlightInvertClasses : []
+            invertClasses:
+              meta.highlightInvert ?? options.highlightInvert ? options.highlightInvertClasses : []
           }
         )
 
