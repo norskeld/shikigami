@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/norskeld/shikigami/compare/v1.1.1...v1.1.2) (2022-01-19)
+
+
+### Bug Fixes
+
+* actually use options defined through extended syntax ([b8ced5d](https://github.com/norskeld/shikigami/commit/b8ced5da7e3ab3fe96b5bfeaf4122f0a73be5660))
+
 ## [1.1.1](https://github.com/norskeld/shikigami/compare/v1.1.0...v1.1.1) (2022-01-15)
 
 
