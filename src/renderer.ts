@@ -100,12 +100,12 @@ export function renderToHtml(
 function escapeHtml(html: string) {
   // prettier-ignore
   const htmlEscapes: Record<string, string> = {
-  '&': '&amp;',
-  '<': '&lt;',
-  '>': '&gt;',
-  '"': '&quot;',
-  '\'': '&#39;'
-}
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    '\'': '&#39;'
+  }
 
   return html.replace(/[&<>"']/g, (char) => htmlEscapes[char])
 }

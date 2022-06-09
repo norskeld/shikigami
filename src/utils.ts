@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnyObject = Record<string, any>
+
 function isObject(item: unknown): boolean {
   return !!item && typeof item === 'object' && !Array.isArray(item)
 }
@@ -6,11 +9,7 @@ function hasOwn(target: object, key: string): boolean {
   return Object.prototype.hasOwnProperty.call(target, key)
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function merge<T extends Record<string, any>, U extends Record<string, any>>(
-  target: T,
-  source: T
-): U {
+export function merge<T extends AnyObject, U extends AnyObject>(target: T, source: T): U {
   const output = { ...target }
 
   if (isObject(target) && isObject(source)) {
