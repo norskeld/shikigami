@@ -7,6 +7,8 @@
 
 Opinionated syntax highlighting with [shiki] for [markdown-it].
 
+![Example of rendered code](/assets/shikigami.png)
+
 ## Installation
 
 Just use your favorite package manager.
