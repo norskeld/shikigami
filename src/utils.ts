@@ -41,10 +41,7 @@ export function groupBy<T, K>(elements: Array<T>, getter: (element: T) => K): Ma
 
     if (map.has(key)) {
       const group = map.get(key)
-
-      if (group) {
-        group.push(element)
-      }
+      group && group.push(element)
     } else {
       map.set(key, [element])
     }

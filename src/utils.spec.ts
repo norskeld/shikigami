@@ -1,4 +1,4 @@
-import { merge } from './utils'
+import { groupBy, merge } from './utils'
 
 describe(merge, () => {
   it('should merge two shallow objects', () => {
@@ -107,6 +107,60 @@ describe(merge, () => {
         theme: 'github-dark'
       }
     }
+
+    expect(actual).toEqual(expected)
+  })
+})
+
+describe(groupBy, () => {
+  interface LineOption {
+    line: number
+    classes: Array<string>
+  }
+
+  it('should group by a key', () => {
+    const actual = groupBy(
+      [
+        { line: 1, classes: ['one', 'two'] },
+        { line: 2, classes: ['three', 'four'] },
+        { line: 3, classes: ['five', 'six'] },
+        { line: 1, classes: ['seven', 'eight'] }
+      ],
+      ({ line }) => line
+    )
+
+    const expected = new Map<number, Array<LineOption>>([
+      [
+        1,
+        [
+          { line: 1, classes: ['one', 'two'] },
+          { line: 1, classes: ['seven', 'eight'] }
+        ]
+      ],
+      [2, [{ line: 2, classes: ['three', 'four'] }]],
+      [3, [{ line: 3, classes: ['five', 'six'] }]]
+    ])
+
+    expect(actual).toEqual(expected)
+  })
+
+  it('should return an ungrouped map', () => {
+    const actual = groupBy(
+      [
+        { line: 1, classes: ['one', 'two'] },
+        { line: 2, classes: ['three', 'four'] },
+        { line: 3, classes: ['five', 'six'] },
+        { line: 4, classes: ['seven', 'eight'] }
+      ],
+      ({ line }) => line
+    )
+
+    const expected = new Map<number, Array<LineOption>>([
+      [1, [{ line: 1, classes: ['one', 'two'] }]],
+      [2, [{ line: 2, classes: ['three', 'four'] }]],
+      [3, [{ line: 3, classes: ['five', 'six'] }]],
+      [4, [{ line: 4, classes: ['seven', 'eight'] }]]
+    ])
 
     expect(actual).toEqual(expected)
   })
