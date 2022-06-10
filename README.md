@@ -81,7 +81,7 @@ Use this option to change the opening token for extended Markdown syntax.
 
 ### `closeToken?: string`
 
-- **Default**: `{{`
+- **Default**: `}}`
 - **Allowed in Markdown**: no
 
 Use this option to change the closing token for extended Markdown syntax.
@@ -199,8 +199,6 @@ Shiki's theme loader.
 
 - [ ] Tests.
 - [ ] Diffs support.
-- [ ] Plugin for **[remark]**.
-- [ ] Plugin for **[rehype]**.
 
 ## License
 
@@ -210,7 +208,5 @@ Shiki's theme loader.
 
 [shiki]: https://shiki.matsu.io
 [markdown-it]: https://github.com/markdown-it/markdown-it
-[remark]: https://github.com/remarkjs/remark
-[rehype]: https://github.com/rehypejs/rehype
 [markdown-it-attrs]: https://github.com/arve0/markdown-it-attrs
 [shiki-docs]: https://shiki.matsu.io
