@@ -1,9 +1,10 @@
 # `式神` shikigami
 
-[![Build/Test](https://img.shields.io/github/workflow/status/norskeld/shikigami/test?style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/shikigami/actions)
-[![Coverage](https://img.shields.io/coveralls/github/norskeld/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://coveralls.io/github/norskeld/shikigami)
-[![NPM](https://img.shields.io/npm/v/@nrsk/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://npm.im/@nrsk/shikigami)
-[![Semantic Release](https://img.shields.io/static/v1?label=semantic&message=release&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/semantic-release/semantic-release)
+[![Build/Test](https://img.shields.io/github/workflow/status/norskeld/shikigami/test?style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/shikigami/actions 'Build and test workflows')
+[![Coverage](https://img.shields.io/coveralls/github/norskeld/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://coveralls.io/github/norskeld/shikigami 'Test coverage')
+[![NPM](https://img.shields.io/npm/v/@nrsk/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://npm.im/@nrsk/shikigami 'This package on NPM')
+![Node Current](https://img.shields.io/node/v/@nrsk/shikigami?style=flat-square&colorA=22272d&colorB=22272d 'Supported Node version')
+[![Semantic Release](https://img.shields.io/static/v1?label=semantic&message=release&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/semantic-release/semantic-release 'This package uses semantic release to handle releasing, versioning, changelog generation and tagging')
 
 Opinionated syntax highlighting with [shiki] for [markdown-it].
 
@@ -16,6 +17,8 @@ Just use your favorite package manager.
 ```bash
 npm i @nrsk/shikigami
 ```
+
+> Note: No styles provided by default, so you need to style everything yourself, using classes described below. There's an [example of CSS here][css-example].
 
 This package comes both in **CommonJS** and **ESM** flavors. No additional steps required, just `import` or `require` it.
 
@@ -174,7 +177,7 @@ Besides exposing the `shikigami` function, this plugin re-exports shiki's `loadT
 
 ### `shikigami(userOptions?: ShikigamiOptions): Promise<PluginSimple>`
 
-Plugin fabric.
+Plugin factory function that resolves to a **markdown-it** plugin.
 
 ```typescript
 import { shikigami } from '@nrsk/shikigami'
@@ -212,3 +215,4 @@ Shiki's theme loader.
 [markdown-it]: https://github.com/markdown-it/markdown-it
 [markdown-it-attrs]: https://github.com/arve0/markdown-it-attrs
 [shiki-docs]: https://shiki.matsu.io
+[css-example]: https://github.com/norskeld/sigma/blob/master/docs/src/components/article.module.css#L56-L159
