@@ -28,10 +28,10 @@
     "build": "tsup",
     "fmt:lint": "eslint --fix --ext .js,.ts .",
     "fmt:prettier": "prettier --write \"**/*.{js,ts,json}\"",
-    "postversion": "node --require tsm ../scripts/release.ts restore",
+    "postversion": "tsx ../scripts/release.ts restore",
     "prebuild": "rimraf dist",
     "prepare": "is-ci || husky install",
-    "prerelease": "node --require tsm scripts/release.ts prepare",
+    "prerelease": "tsx scripts/release.ts prepare",
     "release": "npx semantic-release",
     "release:dry": "npx semantic-release --dry-run",
     "test": "jest",
@@ -85,8 +85,8 @@
     "rimraf": "^3.0.2",
     "semantic-release": "^19.0.3",
     "ts-jest": "^28.0.4",
-    "tsm": "^2.2.1",
     "tsup": "^6.2.3",
+    "tsx": "^3.10.1",
     "typescript": "^4.7.3"
   },
   "commitlint": {
