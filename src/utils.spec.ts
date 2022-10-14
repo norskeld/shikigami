@@ -1,6 +1,8 @@
+import { describe, expect, it } from 'vitest'
+
 import { groupBy, merge } from './utils'
 
-describe(merge, () => {
+describe('merge', () => {
   it('should merge two shallow objects', () => {
     const actual = merge({ one: 'one', two: 'two' }, { one: '1', three: '3' })
     const expected = { one: '1', two: 'two', three: '3' }
@@ -112,7 +114,7 @@ describe(merge, () => {
   })
 })
 
-describe(groupBy, () => {
+describe('groupBy', () => {
   interface LineOption {
     line: number
     classes: Array<string>
