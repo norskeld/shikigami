@@ -2,7 +2,9 @@
   "name": "@nrsk/shikigami",
   "version": "1.1.2",
   "description": "Opinionated syntax highlighting with shiki for markdown-it.",
+  "packageManager": "npm@8.10.0",
   "sideEffects": false,
+  "type": "module",
   "main": "./index.cjs",
   "module": "./index.mjs",
   "types": "./index.d.ts",
@@ -20,15 +22,12 @@
     "*.mjs*"
   ],
   "engines": {
-    "node": ">=14.17.0"
+    "node": "^14.16.0 || ^16.10.0 || ^18.0.0"
   },
   "scripts": {
-    "build": "npm run build:types && npm run build:rollup",
-    "build:types": "tsc -p tsconfig.types.json",
-    "build:rollup": "node --require tsm scripts/compile.ts",
-    "fmt:prettier": "prettier --write \"**/*.{js,ts,json}\"",
+    "build": "tsup",
     "fmt:lint": "eslint --fix --ext .js,.ts .",
-    "postbuild": "rimraf dist/types",
+    "fmt:prettier": "prettier --write \"**/*.{js,ts,json}\"",
     "postversion": "node --require tsm ../scripts/release.ts restore",
     "prebuild": "rimraf dist",
     "prepare": "is-ci || husky install",
@@ -69,9 +68,9 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
     "@nrsk/config-conventional": "^1.0.0",
-    "@rollup/plugin-typescript": "^8.3.3",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
+    "@types/is-ci": "^3.0.0",
     "@types/jest": "^28.1.1",
     "@types/markdown-it": "^12.2.3",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
@@ -84,11 +83,10 @@
     "lint-staged": "^13.0.1",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
-    "rollup": "^2.75.6",
-    "rollup-plugin-dts": "^4.2.2",
     "semantic-release": "^19.0.3",
     "ts-jest": "^28.0.4",
     "tsm": "^2.2.1",
+    "tsup": "^6.2.3",
     "typescript": "^4.7.3"
   },
   "commitlint": {
