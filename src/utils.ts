@@ -30,7 +30,7 @@ export function merge<T extends AnyObject, U extends AnyObject>(target: T, sourc
     })
   }
 
-  return output as U
+  return output as unknown as U
 }
 
 export function groupBy<T, K>(elements: Array<T>, getter: (element: T) => K): Map<K, Array<T>> {
