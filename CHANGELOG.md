@@ -1,3 +1,11 @@
+## [1.1.3](https://github.com/norskeld/shikigami/compare/v1.1.2...v1.1.3) (2022-10-14)
+
+
+### Bug Fixes
+
+* **release:** fix release workflow to bump pkg version in lock file too ([ab63bcd](https://github.com/norskeld/shikigami/commit/ab63bcd804d9cbe11e3c0154fa678e7b0beb3c94))
+* **utils:** fix type error in `merge` ([698f4b2](https://github.com/norskeld/shikigami/commit/698f4b2dfdf6e5a3031e9a805753cca76ff94c4a))
+
 ## [1.1.2](https://github.com/norskeld/shikigami/compare/v1.1.1...v1.1.2) (2022-01-19)
 
 
