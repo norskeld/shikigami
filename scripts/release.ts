@@ -56,6 +56,7 @@ async function main() {
 
           // Copy necessary files.
           await copyFile(`${cwd}/package.json`, `${cwd}/dist/package.json`)
+          await copyFile(`${cwd}/package-lock.json`, `${cwd}/dist/package-lock.json`)
           await copyFile(`${cwd}/CHANGELOG.md`, `${cwd}/dist/CHANGELOG.md`)
           await copyFile(`${cwd}/README.md`, `${cwd}/dist/README.md`)
           await copyFile(`${cwd}/LICENSE`, `${cwd}/dist/LICENSE`)
@@ -81,6 +82,7 @@ async function main() {
         try {
           // Copy back.
           await copyFile(`${cwd}/package.json`, resolve(cwd, '..', 'package.json'))
+          await copyFile(`${cwd}/package-lock.json`, resolve(cwd, '..', 'package-lock.json'))
 
           return {
             kind: 'success',
