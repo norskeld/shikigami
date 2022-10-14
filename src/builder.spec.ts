@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import { useBuilder } from './builder'
 
 describe('useBuilder', () => {
