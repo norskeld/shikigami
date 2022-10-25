@@ -1,3 +1,11 @@
+## [1.1.4](https://github.com/norskeld/shikigami/compare/v1.1.3...v1.1.4) (2022-10-25)
+
+
+### Bug Fixes
+
+* **build:** fix build so it properly bundles all files ([6be3cb9](https://github.com/norskeld/shikigami/commit/6be3cb9efad85e0e63f74b33ef152cc1ab8a0a6b))
+* **deps:** update `package-lock.json` ([2a9ad55](https://github.com/norskeld/shikigami/commit/2a9ad5517dee5ee6b090004ee4002db851a97b6c))
+
 ## [1.1.3](https://github.com/norskeld/shikigami/compare/v1.1.2...v1.1.3) (2022-10-14)
 
 
