@@ -3,8 +3,8 @@
 [![Build/Test](https://img.shields.io/github/workflow/status/norskeld/shikigami/test?style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/shikigami/actions 'Build and test workflows')
 [![Coverage](https://img.shields.io/coveralls/github/norskeld/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://coveralls.io/github/norskeld/shikigami 'Test coverage')
 [![NPM](https://img.shields.io/npm/v/@nrsk/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://npm.im/@nrsk/shikigami 'This package on NPM')
-![Node Current](https://img.shields.io/node/v/@nrsk/shikigami?style=flat-square&colorA=22272d&colorB=22272d 'Supported Node version')
-[![Semantic Release](https://img.shields.io/static/v1?label=semantic&message=release&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/semantic-release/semantic-release 'This package uses semantic release to handle releasing, versioning, changelog generation and tagging')
+[![Supported Node Versions](https://img.shields.io/static/v1?label=node&message=14+|+16+|+18&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/shikigami/blob/master/package.json#L25 'Supported Node versions')
+[![Semantic Release](https://img.shields.io/static/v1?label=semantic+release&message=✔&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/semantic-release/semantic-release 'This package uses semantic release to handle releasing, versioning, changelog generation and tagging')
 
 Opinionated syntax highlighting with [shiki] for [markdown-it].
 
