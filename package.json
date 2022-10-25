@@ -1,6 +1,6 @@
 {
   "name": "@nrsk/shikigami",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Opinionated syntax highlighting with shiki for markdown-it.",
   "packageManager": "npm@8.10.0",
   "sideEffects": false,

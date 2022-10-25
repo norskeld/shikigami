@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/norskeld/shikigami/compare/v1.1.4...v1.1.5) (2022-10-25)
+
+
+### Bug Fixes
+
+* **vitest:** fix coverage collection ([253c65f](https://github.com/norskeld/shikigami/commit/253c65f7bf0513830ae3daccdaaa84405c5744bc))
+
 ## [1.1.4](https://github.com/norskeld/shikigami/compare/v1.1.3...v1.1.4) (2022-10-25)
 
 
