@@ -1,6 +1,6 @@
 # `式神` shikigami
 
-[![Build/Test](https://img.shields.io/github/workflow/status/norskeld/shikigami/test?style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/shikigami/actions 'Build and test workflows')
+[![Build/Test](https://img.shields.io/github/actions/workflow/status/norskeld/shikigami/test.yml?style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/shikigami/actions 'Build and test workflows')
 [![Coverage](https://img.shields.io/coverallsCoverage/github/norskeld/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://coveralls.io/github/norskeld/shikigami 'Test coverage')
 [![NPM](https://img.shields.io/npm/v/@nrsk/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://npm.im/@nrsk/shikigami 'This package on NPM')
 [![Supported Node Versions](https://img.shields.io/static/v1?label=node&message=14+|+16+|+18&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/shikigami/blob/master/package.json#L25 'Supported Node versions')
