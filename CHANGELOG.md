@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/norskeld/shikigami/compare/v1.1.5...v1.1.6) (2023-02-26)
+
+
+### Bug Fixes
+
+* **deps:** bump deps & update `package-lock.json` ([bb89370](https://github.com/norskeld/shikigami/commit/bb893702552b987f7654c2329e90bfc0a6f675f8))
+
 ## [1.1.5](https://github.com/norskeld/shikigami/compare/v1.1.4...v1.1.5) (2022-10-25)
 
 
