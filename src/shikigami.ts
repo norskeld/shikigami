@@ -49,7 +49,12 @@ async function shikigami(userOptions: ShikigamiOptions = {}): Promise<PluginSimp
         const withLanguage = meta.withLanguage ?? options.withLanguage
         const withLineNumbers = meta.withLineNumbers ?? options.withLineNumbers
 
-        const themedTokensRaw = highlighter.codeToThemedTokens(markdownContent, languageId)
+        const themedTokensRaw =
+          // Treat 'ansi' differently.
+          languageId === 'ansi'
+            ? highlighter.ansiToThemedTokens(markdownContent)
+            : highlighter.codeToThemedTokens(markdownContent, languageId)
+
         const themedTokens = filterOutTrailingEmptyTokens(themedTokensRaw)
 
         const lineOptions = createLineOptions(
