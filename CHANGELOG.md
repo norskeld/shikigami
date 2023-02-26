@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/norskeld/shikigami/compare/v1.1.6...v1.2.0) (2023-02-26)
+
+
+### Features
+
+* support highlighting `ansi` ([37986d8](https://github.com/norskeld/shikigami/commit/37986d864811e6c87b3ce3be2dd59ab5a3dcc70a))
+
 ## [1.1.6](https://github.com/norskeld/shikigami/compare/v1.1.5...v1.1.6) (2023-02-26)
 
 
