@@ -2,7 +2,7 @@
   "name": "@nrsk/shikigami",
   "version": "1.2.0",
   "description": "Opinionated syntax highlighting with shiki for markdown-it.",
-  "packageManager": "npm@8.10.0",
+  "packageManager": "npm@9.7.2",
   "sideEffects": false,
   "type": "module",
   "main": "./index.cjs",
@@ -10,9 +10,9 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "import": "./index.js",
-      "require": "./index.cjs",
-      "types": "./index.d.ts"
+      "require": "./index.cjs"
     }
   },
   "files": [
@@ -22,7 +22,7 @@
     "*.js*"
   ],
   "engines": {
-    "node": "^14.16.0 || ^16.10.0 || ^18.0.0"
+    "node": ">=18 <=20"
   },
   "scripts": {
     "build": "tsup",
@@ -62,30 +62,30 @@
     "markdown-it": "^12.3.0"
   },
   "dependencies": {
-    "shiki": "^0.14.1"
+    "shiki": "^0.14.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.4.4",
+    "@commitlint/cli": "^17.6.7",
     "@nrsk/config-conventional": "^1.0.0",
-    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/is-ci": "^3.0.0",
     "@types/markdown-it": "^12.2.3",
-    "@typescript-eslint/eslint-plugin": "^5.53.0",
-    "@typescript-eslint/parser": "^5.53.0",
-    "@vitest/coverage-istanbul": "^0.29.1",
-    "eslint": "^8.35.0",
-    "eslint-config-prettier": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "@vitest/coverage-istanbul": "^0.33.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
-    "lint-staged": "^13.1.2",
+    "lint-staged": "^13.2.3",
     "prettier": "^2.8.4",
-    "rimraf": "^3.0.2",
-    "semantic-release": "^19.0.5",
-    "tsup": "^6.6.3",
-    "tsx": "^3.12.3",
-    "typescript": "^4.9.5",
-    "vitest": "^0.29.1"
+    "rimraf": "^5.0.1",
+    "semantic-release": "^21.0.7",
+    "tsup": "^7.1.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
   },
   "commitlint": {
     "extends": [
