@@ -3,7 +3,7 @@
 [![Build/Test](https://img.shields.io/github/actions/workflow/status/norskeld/shikigami/test.yml?style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/shikigami/actions 'Build and test workflows')
 [![Coverage](https://img.shields.io/coverallsCoverage/github/norskeld/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://coveralls.io/github/norskeld/shikigami 'Test coverage')
 [![NPM](https://img.shields.io/npm/v/@nrsk/shikigami?style=flat-square&colorA=22272d&colorB=22272d)](https://npm.im/@nrsk/shikigami 'This package on NPM')
-[![Supported Node Versions](https://img.shields.io/static/v1?label=node&message=14+|+16+|+18&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/norskeld/shikigami/blob/master/package.json#L25 'Supported Node versions')
+![Supported Node Versions](https://img.shields.io/node/v/%40nrsk/shikigami?style=flat-square&colorA=22272d&colorB=22272d)
 [![Semantic Release](https://img.shields.io/static/v1?label=semantic+release&message=✔&style=flat-square&colorA=22272d&colorB=22272d)](https://github.com/semantic-release/semantic-release 'This package uses semantic release to handle releasing, versioning, changelog generation and tagging')
 
 Opinionated syntax highlighting with [shiki] for [markdown-it].
@@ -18,19 +18,19 @@ Just use your favorite package manager.
 npm i @nrsk/shikigami
 ```
 
-> Note: No styles provided by default, so you need to style everything yourself, using classes described below. There's an [example of CSS here][css-example].
-
 This package comes both in **CommonJS** and **ESM** flavors. No additional steps required, just `import` or `require` it.
-
-## Usage with other plugins
-
-Yet to be confirmed, but most likely this plugin is incompatible with other plugins that process fenced code blocks (e.g. **[markdown-it-attrs]**, which can be used to assign classes to elements and has similar syntax).
 
 ## Usage
 
-This package exposes a function named **shikigami**, which is a `Promise`, that resolves to a **markdown-it** plugin function. Hence, you must `await` it (or use `.then` syntax), and only then pass the resulting function to **markdown-it**.
+> **Note**
+>
+> No styles provided by default, so you need to style everything yourself, using classes described below. There's an [example of CSS here][css-example] using Tailwind.
 
-> _Why?_ **shiki** uses a lot of asynchrounous stuff under the hood, and its public API is mostly asynchronous as well, while **markdown-it** is synchronous, so yeah, I _had_ to wrap the plugin in a `Promise`.
+> **Warning**
+>
+> Most likely this plugin is incompatible with other plugins that process fenced code blocks, e.g. **[markdown-it-attrs]**, which can be used to assign classes to elements and has similar syntax.
+
+This package exposes a function named **shikigami**, which is a `Promise`, that resolves to a **markdown-it** plugin function. Hence, you must `await` it (or use `.then` syntax), and only then pass the resulting function to **markdown-it**.
 
 Below is an example of usage.
 
@@ -215,4 +215,4 @@ Shiki's theme loader.
 [markdown-it]: https://github.com/markdown-it/markdown-it
 [markdown-it-attrs]: https://github.com/arve0/markdown-it-attrs
 [shiki-docs]: https://shiki.matsu.io
-[css-example]: https://github.com/norskeld/sigma/blob/master/docs/src/components/article.module.css#L56-L159
+[css-example]: https://github.com/norskeld/vm.codes/blob/207e1759247861bbb0ab252827832e20f3760b5d/src/components/Content.astro#L20-L186
