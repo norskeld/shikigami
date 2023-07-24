@@ -22,12 +22,10 @@ This package comes both in **CommonJS** and **ESM** flavors. No additional steps
 
 ## Usage
 
-> **Note**
->
+> [!NOTE]\
 > No styles provided by default, so you need to style everything yourself, using classes described below. There's an [example of CSS here][css-example] using Tailwind.
 
-> **Warning**
->
+> [!WARNING]\
 > Most likely this plugin is incompatible with other plugins that process fenced code blocks, e.g. **[markdown-it-attrs]**, which can be used to assign classes to elements and has similar syntax.
 
 This package exposes a function named **shikigami**, which is a `Promise`, that resolves to a **markdown-it** plugin function. Hence, you must `await` it (or use `.then` syntax), and only then pass the resulting function to **markdown-it**.
